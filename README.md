@@ -25,6 +25,9 @@ brew install aniachi/dicomconvert/dicomconvert
 dicomconvert scan.dcm --output scan.png
 dicomconvert scan.dcm --output scan.svg
 dicomconvert scan.dcm --output result --format webp
+dicomconvert scan.dcm --extract json
+dicomconvert scan.dcm --extract html --output metadata.html
+dicomconvert --licence
 ```
 
 Homebrew downloads the matching archive and verifies its SHA-256 automatically.
@@ -68,13 +71,37 @@ binaries; macOS requires version 13 or newer.
 | Linux | Intel/AMD / `x86_64` | `x86_64-unknown-linux-musl` |
 | Android Termux | ARM64 / `aarch64` | `aarch64-linux-android` |
 
-Supported image outputs: PNG, JPEG, GIF, BMP, TIFF, WebP, SVG. Converts frame 0
-only, using the same decoding and image conversion as the HTTP service.
-Files are processed locally. Existing output files are never overwritten.
-Use `--help` or `--version`. An error produces a nonzero exit status.
+## CLI features
 
-The CLI exports image files; HTTP export modes such as NPZ, JSON vectors,
-base64 and compression wrappers remain available through the separate API.
+The CLI converts frame 0 locally to PNG, JPEG, GIF, BMP, TIFF, WebP, SVG,
+NumPy `.npy`/`.npz`, or lossless JPEG XL `.jxl`:
+
+```sh
+dicomconvert scan.dcm --output pixels.npy
+dicomconvert scan.dcm --output pixels.npz
+dicomconvert scan.dcm --output scan.jxl
+```
+
+The aliases `numpy` → `npz` and `jpegxl`/`jpeg-xl` → `jxl` are accepted with
+`--format`. DICOM metadata can be extracted as JSON, text, an ASCII table, or
+HTML. JSON and text are clean machine-readable output; table and HTML include
+elapsed time. Pixel Data and every other binary value are represented only by
+their byte length:
+
+```sh
+dicomconvert scan.dcm --extract json
+dicomconvert scan.dcm --extract text > metadata.txt
+dicomconvert scan.dcm --extract table --output metadata.table
+dicomconvert scan.dcm --extract html --output metadata.html
+```
+
+`--help` and `--about` show the Aniachi Tech ASCII logo, company URL,
+disclaimer, and elapsed time. `--version` shows the logo, URL, and version.
+`--licence` prints the Beer-Ware licence (with the `--license` alias); unknown
+options also point to `dicomconvert --help`. Files are processed locally and
+existing output paths, including symbolic links, are never overwritten. An
+error produces a nonzero exit status.
+
 Decoder support depends on the compiled dicom-pixeldata codecs; unsupported
 transfer syntaxes return an error. JPEG and vectorized SVG are lossy.
 

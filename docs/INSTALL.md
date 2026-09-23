@@ -1,7 +1,8 @@
 # Install dicomconvert
 
 `dicomconvert` is a local command-line tool that exports frame 0 of a DICOM
-file to PNG, JPEG, GIF, BMP, TIFF, WebP, or SVG. It does not upload input files.
+file to PNG, JPEG, GIF, BMP, TIFF, WebP, SVG, NumPy, or JPEG XL. It can also
+extract metadata as JSON, text, table, or HTML. It does not upload input files.
 
 ## Homebrew: macOS and Linux
 
@@ -11,6 +12,8 @@ Intel) and Linux (ARM64 or x86_64):
 ```sh
 brew install aniachi/dicomconvert/dicomconvert
 dicomconvert --version
+dicomconvert --help
+dicomconvert --licence
 ```
 
 To update later:
@@ -80,3 +83,19 @@ dicomconvert --version
 ```
 
 Never install a file when the checksum command reports a mismatch.
+
+## First commands after installation
+
+```sh
+dicomconvert scan.dcm --output scan.png
+dicomconvert scan.dcm --output pixels.npz
+dicomconvert scan.dcm --extract json
+dicomconvert scan.dcm --extract html --output metadata.html
+dicomconvert --about
+dicomconvert --licence
+```
+
+JSON and text extraction write only metadata to stdout. Table and HTML reports
+include elapsed time. Binary DICOM values, including Pixel Data, are reported
+as byte lengths instead of being written to the terminal. Existing output
+files are protected from overwrite.
