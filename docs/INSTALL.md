@@ -27,6 +27,35 @@ If Homebrew has not been installed yet, follow the instructions at
 [brew.sh](https://brew.sh/). Homebrew is the recommended installation path on
 macOS and Linux because it validates the release checksum automatically.
 
+## Chocolatey: Windows x64
+
+Install the native Windows build from PowerShell:
+
+```powershell
+choco install dicomconvert
+```
+
+Open a new PowerShell window after installation and verify it:
+
+```powershell
+dicomconvert --version
+dicomconvert --help
+```
+
+To update or uninstall:
+
+```powershell
+choco upgrade dicomconvert
+choco uninstall dicomconvert
+```
+
+The package targets 64-bit Windows (`x86_64-pc-windows-msvc`). It downloads the
+matching ZIP from the immutable GitHub Release and verifies its SHA-256 checksum
+before installing. If Chocolatey is not available, download the asset ending in
+`x86_64-pc-windows-msvc.zip` from the
+[Releases page](https://github.com/aniachi/homebrew-dicomconvert/releases),
+extract `dicomconvert.exe`, and add its directory to `PATH`.
+
 ## Direct binary download: macOS and Linux
 
 Open the repository's **Releases** page and select the asset whose target
