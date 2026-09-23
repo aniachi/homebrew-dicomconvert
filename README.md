@@ -86,11 +86,13 @@ dicomconvert --version
 Android API 21+, while current Termux distributions generally require a newer
 Android version. A checksum mismatch means the binary must not be installed.
 
-## Direct download on macOS or Linux
+## Direct download on macOS, Linux, or Windows
 
 Download the archive matching the `target` shown below from Releases and verify
-it against `SHA256SUMS` before extracting it. Linux archives are static musl
-binaries; macOS requires version 13 or newer.
+it before extracting it. Use `SHA256SUMS` for Unix archives and the SHA-256
+digest displayed by GitHub for the Windows ZIP. Linux archives are static musl
+binaries; macOS requires version 13 or newer; Windows uses the native x64 MSVC
+build.
 
 | System | CPU / `uname -m` | Release target |
 | --- | --- | --- |
@@ -98,6 +100,7 @@ binaries; macOS requires version 13 or newer.
 | macOS | Intel / `x86_64` | `x86_64-apple-darwin` |
 | Linux | ARM64 / `aarch64` | `aarch64-unknown-linux-musl` |
 | Linux | Intel/AMD / `x86_64` | `x86_64-unknown-linux-musl` |
+| Windows | x64 / `x86_64` | `x86_64-pc-windows-msvc` |
 | Android Termux | ARM64 / `aarch64` | `aarch64-linux-android` |
 
 ## CLI features

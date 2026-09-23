@@ -56,7 +56,7 @@ before installing. If Chocolatey is not available, download the asset ending in
 [Releases page](https://github.com/aniachi/homebrew-dicomconvert/releases),
 extract `dicomconvert.exe`, and add its directory to `PATH`.
 
-## Direct binary download: macOS and Linux
+## Direct binary download: macOS, Linux, and Windows
 
 Open the repository's **Releases** page and select the asset whose target
 matches your machine:
@@ -67,8 +67,15 @@ matches your machine:
 | macOS 13+ | Intel / `x86_64` | `x86_64-apple-darwin` |
 | Linux | ARM64 / `aarch64` | `aarch64-unknown-linux-musl` |
 | Linux | Intel/AMD / `x86_64` | `x86_64-unknown-linux-musl` |
+| Windows | x64 / `x86_64` | `x86_64-pc-windows-msvc` |
 
-Every release includes `SHA256SUMS`. Verify an archive before installing it:
+For Windows, download the ZIP ending in
+`x86_64-pc-windows-msvc.zip`, verify its SHA-256 value, extract
+`dicomconvert.exe`, and add its directory to `PATH`.
+
+Every release includes `SHA256SUMS` for Unix archives. For the Windows ZIP,
+verify the SHA-256 digest displayed by GitHub next to the release asset before
+installing it:
 
 ```sh
 release="vX.Y.Z" # replace with a published tag
