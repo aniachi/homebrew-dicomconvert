@@ -10,7 +10,7 @@ checksum release binaries; it contains no DICOM samples or patient data.
 ## Documentation
 
 - [Installation guide](docs/INSTALL.md) — Homebrew, direct macOS/Linux downloads,
-  and Android Termux.
+  Windows/Chocolatey, and Android Termux.
 - [CLI usage](docs/USAGE.md) — supported formats, examples, and exit behavior.
 - [Release and integrity policy](docs/RELEASES.md) — checksums and immutable releases.
 - [Contributing](CONTRIBUTING.md) and [security reporting](SECURITY.md).
@@ -31,6 +31,35 @@ dicomconvert --licence
 ```
 
 Homebrew downloads the matching archive and verifies its SHA-256 automatically.
+
+## Install on Windows with Chocolatey
+
+The recommended Windows installation uses [Chocolatey](https://chocolatey.org/)
+and installs the native x64 MSVC build:
+
+```powershell
+choco install dicomconvert
+```
+
+After installation, open a new PowerShell window and verify the command:
+
+```powershell
+dicomconvert --version
+dicomconvert --help
+```
+
+To update or remove it later:
+
+```powershell
+choco upgrade dicomconvert
+choco uninstall dicomconvert
+```
+
+Chocolatey verifies the SHA-256 checksum of the GitHub Release ZIP before
+installing it. Windows users who do not use Chocolatey can download the
+`x86_64-pc-windows-msvc.zip` asset from the
+[Releases page](https://github.com/aniachi/homebrew-dicomconvert/releases),
+extract `dicomconvert.exe`, and add its directory to `PATH`.
 
 ## Termux on Android (direct download)
 
