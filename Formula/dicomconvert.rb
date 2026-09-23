@@ -1,29 +1,29 @@
 class Dicomconvert < Formula
   desc "Convert the first frame of DICOM files to images"
   homepage "https://github.com/aniachi/homebrew-dicomconvert"
-  version "0.1.0"
+  version "0.1.10"
   license "Beerware"
 
   on_macos do
     depends_on macos: :ventura
     on_arm do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.0/dicomconvert-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "07f061806a04f6966cbf27cf062262c3aa95c7ebef67c7f5ae45cf830f913987"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.10/dicomconvert-v0.1.10-aarch64-apple-darwin.tar.gz"
+      sha256 "804c84efc8e44948a2b374d62193a796d9952b9ca331a46b120d0982c530c319"
     end
     on_intel do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.0/dicomconvert-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "f5631454968f47794977a592147ef7b9b2aced503f00778d51aaaf173e20fe5b"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.10/dicomconvert-v0.1.10-x86_64-apple-darwin.tar.gz"
+      sha256 "814c818ca47c1b04f27ff36ad23debd290852af091964b04ef980275f2f3cb24"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.0/dicomconvert-v0.1.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "b699f3b373010482e4082d81f56a86a61673eb24957a66077986cfab09531248"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.10/dicomconvert-v0.1.10-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "938103e03206757246fa9d78fb9d847521d125182af4fb7e571358cf346d2285"
     end
     on_arm do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.0/dicomconvert-v0.1.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "a625bb686cd154a3f5d4af6708339288a1b8e72635714695d7c5b048e05c6b72"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.10/dicomconvert-v0.1.10-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "0e8d5c5a37d8301c0f2847c2a44c7b74ac8d2e80b4fbd5599250cf7164e76224"
     end
   end
 
