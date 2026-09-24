@@ -1,29 +1,29 @@
 class Dicomconvert < Formula
   desc "Convert the first frame of DICOM files to images"
   homepage "https://github.com/aniachi/homebrew-dicomconvert"
-  version "0.1.21"
+  version "0.1.22"
   license "Beerware"
 
   on_macos do
     depends_on macos: :ventura
     on_arm do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.21/dicomconvert-v0.1.21-aarch64-apple-darwin.tar.gz"
-      sha256 "eaf90378fc9bc92db882853e9a84a090cbaa2a53952d01be079c8a1db8fa5bcf"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.22/dicomconvert-v0.1.22-aarch64-apple-darwin.tar.gz"
+      sha256 "4674475b0757c1a3daccf6c6b68f3e06313d53aacfb3076f4102240aed94b54f"
     end
     on_intel do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.21/dicomconvert-v0.1.21-x86_64-apple-darwin.tar.gz"
-      sha256 "38040def2f19d7e27308dbba4d4a337e9f972b50a2ba455a0173ebc859f6e2d9"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.22/dicomconvert-v0.1.22-x86_64-apple-darwin.tar.gz"
+      sha256 "65390ee58e7a15a82b9fa428c81090c6a25fd7042139053e96bee7a8e29ae30d"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.21/dicomconvert-v0.1.21-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "53cf592ff2ccec5adf3e93b548dbb0b7767e574852a125fec6deccf1f8f3a15f"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.22/dicomconvert-v0.1.22-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "c6a30de2ff4b5efb0ee55ffb0154345fd95254e6671fd4b44f43c1f1b6c7d09c"
     end
     on_arm do
-      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.21/dicomconvert-v0.1.21-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "f9bfec8350d4a74c2a696bf4d9636164eee27113cc71c592247db6dad7421070"
+      url "https://github.com/aniachi/homebrew-dicomconvert/releases/download/v0.1.22/dicomconvert-v0.1.22-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "05a5f2448778ae9e35f5053440fd2793681212dad0cf4c144f1500c20086d318"
     end
   end
 
